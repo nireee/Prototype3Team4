@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Interact : MonoBehaviour
 {
-    public Camera camera;
+    public Camera cam;
     public bool Touched;
     // Start is called before the first frame update
     void Start()
@@ -17,13 +17,14 @@ public class Interact : MonoBehaviour
     {
         CheckTouchTag();
         Debug.Log(Touched);
+        //Reposition();
     }
 
     void CheckTouchTag()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Ray ray = camera.ScreenPointToRay(Input.mousePosition);
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
             if (Physics.Raycast(ray, out hit))
@@ -36,4 +37,13 @@ public class Interact : MonoBehaviour
 
         }
     }
+
+    //void Reposition()
+    //{
+    //    if (Touched)
+    //    {
+    //        cam.ScreenToWorldPoint(Input.mousePosition);
+    //        Touched = false;
+    //    }
+    //}
 }

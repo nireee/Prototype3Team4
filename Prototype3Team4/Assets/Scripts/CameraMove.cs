@@ -14,6 +14,8 @@ public class CameraMove : MonoBehaviour
     public float difference;
     public float zoom_rate = 5f;
 
+    public float rot;
+
     public float zoomOutMin_x = 25f;
     public float zoomOutMax_x = 100f;
 
@@ -67,19 +69,24 @@ public class CameraMove : MonoBehaviour
 
         if(Input.touchCount == 2)
         {
-            Touch touch0 = Input.GetTouch(0);
-            Touch touch1 = Input.GetTouch(1);
 
-            touch0_prev = touch0.position - touch0.deltaPosition;
-            touch1_prev = touch1.position - touch1.deltaPosition;
-
-            prev_magnitude = (touch0_prev - touch1_prev).magnitude;
-            cur_magnitude = (touch0.position - touch1.position).magnitude;
-
-            difference = cur_magnitude - prev_magnitude;
-
-            Zoom(difference * zoom_rate);
+            //if(rot > 10f)
+            //{
+            //    Rotate();
+            //}
+            //else
+            //{
+            //    Zoom();
+            //}
+            Zoom();
+            //Rotate();
+            
         }
+        else if(Input.touchCount == 3)
+        {
+            Tilt();
+        }
+
         else if (Input.GetMouseButton(0))
         {
             if (AllowRotate)
@@ -94,6 +101,46 @@ public class CameraMove : MonoBehaviour
         }
     }
 
+    void Tilt()
+    {
+        Touch touch0 = Input.GetTouch(0);
+        Touch touch1 = Input.GetTouch(1);
+
+        touch0_prev = touch0.position - touch0.deltaPosition;
+        touch1_prev = touch1.position - touch1.deltaPosition;
+
+        prev_magnitude = (touch0_prev - touch1_prev).magnitude;
+        cur_magnitude = (touch0.position - touch1.position).magnitude;
+
+        difference = cur_magnitude - prev_magnitude;
+
+        float x = touch0.position.x - touch0_prev.x;
+
+        if(difference < 0.5f)
+        {
+            Portrait.transform.Rotate(x*0.05f, Portrait.transform.rotation.y, Portrait.transform.rotation.z);
+        }
+    }
+
+    void Rotate()
+    {
+        Touch touch0 = Input.GetTouch(0);
+        Touch touch1 = Input.GetTouch(1);
+
+        touch0_prev = touch0.position - touch0.deltaPosition;
+        touch1_prev = touch1.position - touch1.deltaPosition;
+
+        Vector2 prev_dir = touch0_prev - touch1_prev;
+        Vector2 cur_dir = touch0.position - touch1.position;
+
+        rot = Vector2.Angle(prev_dir, cur_dir);
+
+        Portrait.transform.Rotate(0, 0, 0.01f* (rot));
+
+        Debug.Log("Rotate!");
+
+    }
+
     //void SetCamBoundary()
     //{
     //    cam.transform.position = new Vector3
@@ -104,12 +151,23 @@ public class CameraMove : MonoBehaviour
     //    );
     //}
 
-    void Zoom(float diff)
+    void Zoom()
     {
+        Touch touch0 = Input.GetTouch(0);
+        Touch touch1 = Input.GetTouch(1);
+
+        touch0_prev = touch0.position - touch0.deltaPosition;
+        touch1_prev = touch1.position - touch1.deltaPosition;
+
+        prev_magnitude = (touch0_prev - touch1_prev).magnitude;
+        cur_magnitude = (touch0.position - touch1.position).magnitude;
+
+        difference = cur_magnitude - prev_magnitude;
         
+
         cur_scale = Portrait.transform.localScale;
-        cur_scale.x = Mathf.Clamp(Portrait.transform.localScale.x + (2.5f*diff), zoomOutMin_x, zoomOutMax_x);
-        cur_scale.y = Mathf.Clamp(Portrait.transform.localScale.y + diff, zoomOutMin_y, zoomOutMax_y);
+        cur_scale.x = Mathf.Clamp(Portrait.transform.localScale.x + (2.5f*difference*zoom_rate), zoomOutMin_x, zoomOutMax_x);
+        cur_scale.y = Mathf.Clamp(Portrait.transform.localScale.y + (difference*zoom_rate), zoomOutMin_y, zoomOutMax_y);
 
         //float factor = cur_scale.x / Portrait.transform.localScale.x;
 
