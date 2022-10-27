@@ -71,8 +71,20 @@ public class CameraMove : MonoBehaviour
 
         if(Input.touchCount == 2)
         {
+            Touch touch0 = Input.GetTouch(0);
 
-            Zoom();
+            touch0_prev = touch0.position - touch0.deltaPosition;
+
+            rot = Vector2.Angle(touch0.position, touch0_prev);
+
+            if (rot > 20)
+            {
+                Rotate();
+            }
+            else
+            {
+                Zoom();
+            }
 
         }
         else if(Input.touchCount == 3)
@@ -107,18 +119,11 @@ public class CameraMove : MonoBehaviour
 
     void Rotate()
     {
-        Touch touch0 = Input.GetTouch(0);
-        Touch touch1 = Input.GetTouch(1);
+        
 
-        touch0_prev = touch0.position - touch0.deltaPosition;
-        touch1_prev = touch1.position - touch1.deltaPosition;
+        Vector3 rotate_portrait = new Vector3(Portrait.transform.rotation.x, Portrait.transform.rotation.y, rot);
 
-        Vector2 prev_dir = touch0_prev - touch1_prev;
-        Vector2 cur_dir = touch0.position - touch1.position;
-
-        rot = Vector2.Angle(prev_dir, cur_dir);
-
-        Portrait.transform.eulerAngles += Rotation;
+        Portrait.transform.eulerAngles += rotate_portrait;
 
         Debug.Log("Rotate!");
 
@@ -170,7 +175,7 @@ public class CameraMove : MonoBehaviour
         Vector3 dir = touchpoint - cam.ScreenToWorldPoint(Input.mousePosition);
         dir.z = 0;
         cam.transform.position += dir;
-        SetCamBoundary();
+        //SetCamBoundary();
     }
 
     void RotateStatue()
