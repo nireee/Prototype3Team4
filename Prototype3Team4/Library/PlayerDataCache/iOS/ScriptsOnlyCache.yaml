@@ -870,7 +870,7 @@ ScriptsOnlyBuild:
     className: UnityOnMouseOverMessageListener
   - hash:
       serializedVersion: 2
-      Hash: efd0a7c3729c27fdfb9245392244fb65
+      Hash: 07d960cec85cbf91e5edac6fdb31c07a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CameraMove

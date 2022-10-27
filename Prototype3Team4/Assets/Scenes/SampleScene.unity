@@ -1039,7 +1039,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: -0.10766664, y: -0, z: -0, w: 0.9941871}
-  m_LocalPosition: {x: 2, y: -2.1, z: 0.5}
+  m_LocalPosition: {x: -5.7, y: -0.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1068,6 +1068,9 @@ MonoBehaviour:
   difference: 0
   zoom_rate: 0.01
   rot: 0
+  tilt_rate: 2
+  rotate_min: -180
+  rotate_max: 180
   zoomOutMin_x: 25
   zoomOutMax_x: 100
   zoomOutMin_y: 10
@@ -1077,10 +1080,10 @@ MonoBehaviour:
   rotate_speed: 10
   Portrait: {fileID: 642734671}
   cur_scale: {x: 0, y: 0, z: 0}
-  LeftLimit: 0
-  RightLimit: 0
-  TopLimit: 0
-  BottomLimit: 0
+  LeftLimit: -5.7
+  RightLimit: 1.94
+  TopLimit: -0.04
+  BottomLimit: -1.82
 --- !u!1 &1462064109
 GameObject:
   m_ObjectHideFlags: 0

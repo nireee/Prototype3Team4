@@ -15,6 +15,9 @@ public class CameraMove : MonoBehaviour
     public float zoom_rate = 5f;
 
     public float rot;
+    public float tilt_rate;
+    public float rotate_min = -180f;
+    public float rotate_max = 180f;
 
     public float zoomOutMin_x = 25f;
     public float zoomOutMax_x = 100f;
@@ -45,7 +48,6 @@ public class CameraMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //SetCamBoundary();
         if (Input.GetMouseButtonDown(0))
         {
             touchpoint = cam.ScreenToWorldPoint(Input.mousePosition);
@@ -70,17 +72,8 @@ public class CameraMove : MonoBehaviour
         if(Input.touchCount == 2)
         {
 
-            //if(rot > 10f)
-            //{
-            //    Rotate();
-            //}
-            //else
-            //{
-            //    Zoom();
-            //}
             Zoom();
-            //Rotate();
-            
+
         }
         else if(Input.touchCount == 3)
         {
@@ -103,23 +96,13 @@ public class CameraMove : MonoBehaviour
 
     void Tilt()
     {
-        Touch touch0 = Input.GetTouch(0);
-        Touch touch1 = Input.GetTouch(1);
+        Vector3 dir = touchpoint - cam.ScreenToWorldPoint(Input.mousePosition);
 
-        touch0_prev = touch0.position - touch0.deltaPosition;
-        touch1_prev = touch1.position - touch1.deltaPosition;
+        float x = -(dir.y) * tilt_rate;
 
-        prev_magnitude = (touch0_prev - touch1_prev).magnitude;
-        cur_magnitude = (touch0.position - touch1.position).magnitude;
+        Portrait.transform.eulerAngles += new Vector3(x, Portrait.transform.rotation.y, Portrait.transform.rotation.z);
 
-        difference = cur_magnitude - prev_magnitude;
-
-        float x = touch0.position.x - touch0_prev.x;
-
-        if(difference < 0.5f)
-        {
-            Portrait.transform.Rotate(x*0.05f, Portrait.transform.rotation.y, Portrait.transform.rotation.z);
-        }
+        touchpoint = cam.ScreenToWorldPoint(Input.mousePosition);
     }
 
     void Rotate()
@@ -135,21 +118,21 @@ public class CameraMove : MonoBehaviour
 
         rot = Vector2.Angle(prev_dir, cur_dir);
 
-        Portrait.transform.Rotate(0, 0, 0.01f* (rot));
+        Portrait.transform.eulerAngles += Rotation;
 
         Debug.Log("Rotate!");
 
     }
 
-    //void SetCamBoundary()
-    //{
-    //    cam.transform.position = new Vector3
-    //    (
-    //        Mathf.Clamp(transform.position.x, LeftLimit, RightLimit),
-    //        Mathf.Clamp(transform.position.y, BottomLimit, TopLimit),
-    //        transform.position.z
-    //    );
-    //}
+    void SetCamBoundary()
+    {
+        cam.transform.position = new Vector3
+        (
+            Mathf.Clamp(transform.position.x, LeftLimit, RightLimit),
+            Mathf.Clamp(transform.position.y, BottomLimit, TopLimit),
+            cam.transform.position.z
+        );
+    }
 
     void Zoom()
     {
@@ -169,12 +152,12 @@ public class CameraMove : MonoBehaviour
         cur_scale.x = Mathf.Clamp(Portrait.transform.localScale.x + (2.5f*difference*zoom_rate), zoomOutMin_x, zoomOutMax_x);
         cur_scale.y = Mathf.Clamp(Portrait.transform.localScale.y + (difference*zoom_rate), zoomOutMin_y, zoomOutMax_y);
 
-        //float factor = cur_scale.x / Portrait.transform.localScale.x;
+        float factor = cur_scale.x / Portrait.transform.localScale.x;
 
-        //LeftLimit *= factor;
-        //RightLimit *= factor;
-        //TopLimit *= factor;
-        //BottomLimit *= factor;
+        LeftLimit *= factor;
+        RightLimit *= factor;
+        TopLimit *= factor;
+        BottomLimit *= factor;
 
         Portrait.transform.localScale = cur_scale;
 
@@ -185,8 +168,9 @@ public class CameraMove : MonoBehaviour
     void DragPortrait()
     {
         Vector3 dir = touchpoint - cam.ScreenToWorldPoint(Input.mousePosition);
+        dir.z = 0;
         cam.transform.position += dir;
-        //SetCamBoundary();
+        SetCamBoundary();
     }
 
     void RotateStatue()

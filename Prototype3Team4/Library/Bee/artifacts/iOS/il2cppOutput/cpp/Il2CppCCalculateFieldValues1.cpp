@@ -9250,34 +9250,40 @@ struct CameraMove_t23DC216F2FEE6FAB9028C55F387423FE67634220  : public MonoBehavi
 	float ___zoom_rate_11;
 	// System.Single CameraMove::rot
 	float ___rot_12;
+	// System.Single CameraMove::tilt_rate
+	float ___tilt_rate_13;
+	// System.Single CameraMove::rotate_min
+	float ___rotate_min_14;
+	// System.Single CameraMove::rotate_max
+	float ___rotate_max_15;
 	// System.Single CameraMove::zoomOutMin_x
-	float ___zoomOutMin_x_13;
+	float ___zoomOutMin_x_16;
 	// System.Single CameraMove::zoomOutMax_x
-	float ___zoomOutMax_x_14;
+	float ___zoomOutMax_x_17;
 	// System.Single CameraMove::zoomOutMin_y
-	float ___zoomOutMin_y_15;
+	float ___zoomOutMin_y_18;
 	// System.Single CameraMove::zoomOutMax_y
-	float ___zoomOutMax_y_16;
+	float ___zoomOutMax_y_19;
 	// UnityEngine.GameObject CameraMove::statue
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___statue_17;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___statue_20;
 	// System.Boolean CameraMove::AllowRotate
-	bool ___AllowRotate_18;
+	bool ___AllowRotate_21;
 	// UnityEngine.Vector3 CameraMove::Rotation
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___Rotation_19;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___Rotation_22;
 	// System.Single CameraMove::rotate_speed
-	float ___rotate_speed_20;
+	float ___rotate_speed_23;
 	// UnityEngine.GameObject CameraMove::Portrait
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___Portrait_21;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___Portrait_24;
 	// UnityEngine.Vector3 CameraMove::cur_scale
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___cur_scale_22;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___cur_scale_25;
 	// System.Single CameraMove::LeftLimit
-	float ___LeftLimit_23;
+	float ___LeftLimit_26;
 	// System.Single CameraMove::RightLimit
-	float ___RightLimit_24;
+	float ___RightLimit_27;
 	// System.Single CameraMove::TopLimit
-	float ___TopLimit_25;
+	float ___TopLimit_28;
 	// System.Single CameraMove::BottomLimit
-	float ___BottomLimit_26;
+	float ___BottomLimit_29;
 };
 
 // ChatController
@@ -11715,9 +11721,9 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3508[4] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3509[11] = 
 {
 	static_cast<int32_t>(offsetof(GUILayoutEntry_tDF59F19DD000820F64B356D5092C4BEDFE109D5F, ___minWidth_0)),static_cast<int32_t>(offsetof(GUILayoutEntry_tDF59F19DD000820F64B356D5092C4BEDFE109D5F, ___maxWidth_1)),static_cast<int32_t>(offsetof(GUILayoutEntry_tDF59F19DD000820F64B356D5092C4BEDFE109D5F, ___minHeight_2)),static_cast<int32_t>(offsetof(GUILayoutEntry_tDF59F19DD000820F64B356D5092C4BEDFE109D5F, ___maxHeight_3)),static_cast<int32_t>(offsetof(GUILayoutEntry_tDF59F19DD000820F64B356D5092C4BEDFE109D5F, ___rect_4)),static_cast<int32_t>(offsetof(GUILayoutEntry_tDF59F19DD000820F64B356D5092C4BEDFE109D5F, ___stretchWidth_5)),static_cast<int32_t>(offsetof(GUILayoutEntry_tDF59F19DD000820F64B356D5092C4BEDFE109D5F, ___stretchHeight_6)),static_cast<int32_t>(offsetof(GUILayoutEntry_tDF59F19DD000820F64B356D5092C4BEDFE109D5F, ___consideredForMargin_7)),static_cast<int32_t>(offsetof(GUILayoutEntry_tDF59F19DD000820F64B356D5092C4BEDFE109D5F, ___m_Style_8)),static_cast<int32_t>(offsetof(GUILayoutEntry_tDF59F19DD000820F64B356D5092C4BEDFE109D5F_StaticFields, ___kDummyRect_9)),static_cast<int32_t>(offsetof(GUILayoutEntry_tDF59F19DD000820F64B356D5092C4BEDFE109D5F_StaticFields, ___indent_10)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3512[23] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3512[26] = 
 {
-	static_cast<int32_t>(offsetof(CameraMove_t23DC216F2FEE6FAB9028C55F387423FE67634220, ___touchpoint_4)),static_cast<int32_t>(offsetof(CameraMove_t23DC216F2FEE6FAB9028C55F387423FE67634220, ___cam_5)),static_cast<int32_t>(offsetof(CameraMove_t23DC216F2FEE6FAB9028C55F387423FE67634220, ___touch0_prev_6)),static_cast<int32_t>(offsetof(CameraMove_t23DC216F2FEE6FAB9028C55F387423FE67634220, ___touch1_prev_7)),static_cast<int32_t>(offsetof(CameraMove_t23DC216F2FEE6FAB9028C55F387423FE67634220, ___prev_magnitude_8)),static_cast<int32_t>(offsetof(CameraMove_t23DC216F2FEE6FAB9028C55F387423FE67634220, ___cur_magnitude_9)),static_cast<int32_t>(offsetof(CameraMove_t23DC216F2FEE6FAB9028C55F387423FE67634220, ___difference_10)),static_cast<int32_t>(offsetof(CameraMove_t23DC216F2FEE6FAB9028C55F387423FE67634220, ___zoom_rate_11)),static_cast<int32_t>(offsetof(CameraMove_t23DC216F2FEE6FAB9028C55F387423FE67634220, ___rot_12)),static_cast<int32_t>(offsetof(CameraMove_t23DC216F2FEE6FAB9028C55F387423FE67634220, ___zoomOutMin_x_13)),static_cast<int32_t>(offsetof(CameraMove_t23DC216F2FEE6FAB9028C55F387423FE67634220, ___zoomOutMax_x_14)),static_cast<int32_t>(offsetof(CameraMove_t23DC216F2FEE6FAB9028C55F387423FE67634220, ___zoomOutMin_y_15)),static_cast<int32_t>(offsetof(CameraMove_t23DC216F2FEE6FAB9028C55F387423FE67634220, ___zoomOutMax_y_16)),static_cast<int32_t>(offsetof(CameraMove_t23DC216F2FEE6FAB9028C55F387423FE67634220, ___statue_17)),static_cast<int32_t>(offsetof(CameraMove_t23DC216F2FEE6FAB9028C55F387423FE67634220, ___AllowRotate_18)),static_cast<int32_t>(offsetof(CameraMove_t23DC216F2FEE6FAB9028C55F387423FE67634220, ___Rotation_19)),static_cast<int32_t>(offsetof(CameraMove_t23DC216F2FEE6FAB9028C55F387423FE67634220, ___rotate_speed_20)),static_cast<int32_t>(offsetof(CameraMove_t23DC216F2FEE6FAB9028C55F387423FE67634220, ___Portrait_21)),static_cast<int32_t>(offsetof(CameraMove_t23DC216F2FEE6FAB9028C55F387423FE67634220, ___cur_scale_22)),static_cast<int32_t>(offsetof(CameraMove_t23DC216F2FEE6FAB9028C55F387423FE67634220, ___LeftLimit_23)),static_cast<int32_t>(offsetof(CameraMove_t23DC216F2FEE6FAB9028C55F387423FE67634220, ___RightLimit_24)),static_cast<int32_t>(offsetof(CameraMove_t23DC216F2FEE6FAB9028C55F387423FE67634220, ___TopLimit_25)),static_cast<int32_t>(offsetof(CameraMove_t23DC216F2FEE6FAB9028C55F387423FE67634220, ___BottomLimit_26)),};
+	static_cast<int32_t>(offsetof(CameraMove_t23DC216F2FEE6FAB9028C55F387423FE67634220, ___touchpoint_4)),static_cast<int32_t>(offsetof(CameraMove_t23DC216F2FEE6FAB9028C55F387423FE67634220, ___cam_5)),static_cast<int32_t>(offsetof(CameraMove_t23DC216F2FEE6FAB9028C55F387423FE67634220, ___touch0_prev_6)),static_cast<int32_t>(offsetof(CameraMove_t23DC216F2FEE6FAB9028C55F387423FE67634220, ___touch1_prev_7)),static_cast<int32_t>(offsetof(CameraMove_t23DC216F2FEE6FAB9028C55F387423FE67634220, ___prev_magnitude_8)),static_cast<int32_t>(offsetof(CameraMove_t23DC216F2FEE6FAB9028C55F387423FE67634220, ___cur_magnitude_9)),static_cast<int32_t>(offsetof(CameraMove_t23DC216F2FEE6FAB9028C55F387423FE67634220, ___difference_10)),static_cast<int32_t>(offsetof(CameraMove_t23DC216F2FEE6FAB9028C55F387423FE67634220, ___zoom_rate_11)),static_cast<int32_t>(offsetof(CameraMove_t23DC216F2FEE6FAB9028C55F387423FE67634220, ___rot_12)),static_cast<int32_t>(offsetof(CameraMove_t23DC216F2FEE6FAB9028C55F387423FE67634220, ___tilt_rate_13)),static_cast<int32_t>(offsetof(CameraMove_t23DC216F2FEE6FAB9028C55F387423FE67634220, ___rotate_min_14)),static_cast<int32_t>(offsetof(CameraMove_t23DC216F2FEE6FAB9028C55F387423FE67634220, ___rotate_max_15)),static_cast<int32_t>(offsetof(CameraMove_t23DC216F2FEE6FAB9028C55F387423FE67634220, ___zoomOutMin_x_16)),static_cast<int32_t>(offsetof(CameraMove_t23DC216F2FEE6FAB9028C55F387423FE67634220, ___zoomOutMax_x_17)),static_cast<int32_t>(offsetof(CameraMove_t23DC216F2FEE6FAB9028C55F387423FE67634220, ___zoomOutMin_y_18)),static_cast<int32_t>(offsetof(CameraMove_t23DC216F2FEE6FAB9028C55F387423FE67634220, ___zoomOutMax_y_19)),static_cast<int32_t>(offsetof(CameraMove_t23DC216F2FEE6FAB9028C55F387423FE67634220, ___statue_20)),static_cast<int32_t>(offsetof(CameraMove_t23DC216F2FEE6FAB9028C55F387423FE67634220, ___AllowRotate_21)),static_cast<int32_t>(offsetof(CameraMove_t23DC216F2FEE6FAB9028C55F387423FE67634220, ___Rotation_22)),static_cast<int32_t>(offsetof(CameraMove_t23DC216F2FEE6FAB9028C55F387423FE67634220, ___rotate_speed_23)),static_cast<int32_t>(offsetof(CameraMove_t23DC216F2FEE6FAB9028C55F387423FE67634220, ___Portrait_24)),static_cast<int32_t>(offsetof(CameraMove_t23DC216F2FEE6FAB9028C55F387423FE67634220, ___cur_scale_25)),static_cast<int32_t>(offsetof(CameraMove_t23DC216F2FEE6FAB9028C55F387423FE67634220, ___LeftLimit_26)),static_cast<int32_t>(offsetof(CameraMove_t23DC216F2FEE6FAB9028C55F387423FE67634220, ___RightLimit_27)),static_cast<int32_t>(offsetof(CameraMove_t23DC216F2FEE6FAB9028C55F387423FE67634220, ___TopLimit_28)),static_cast<int32_t>(offsetof(CameraMove_t23DC216F2FEE6FAB9028C55F387423FE67634220, ___BottomLimit_29)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3513[2] = 
 {
 	static_cast<int32_t>(offsetof(Interact_t91C973B012957CAD74AFF709DBD1AD37B9AF46D0, ___cam_4)),static_cast<int32_t>(offsetof(Interact_t91C973B012957CAD74AFF709DBD1AD37B9AF46D0, ___Touched_5)),};
