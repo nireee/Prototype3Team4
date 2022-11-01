@@ -23,6 +23,14 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _Main_Normal:
+        m_Texture: {fileID: 2800000, guid: 86d5f7028e3959f46be3f47fcc6d61ed, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Second_Normal:
+        m_Texture: {fileID: 2800000, guid: 6f935055fa5525142ab670da65efe273, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -37,13 +45,15 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Depth: 1
+    - _Depth: -0.14
+    - _Normal_Strength: 1.8
     - _QueueControl: 1
     - _QueueOffset: 0
-    - _Strength: 0.39
+    - _Smoothness: 0
+    - _Strength: 0.96
     m_Colors:
-    - _DeepColor: {r: 0.2212531, g: 0.41509432, b: 0.4110923, a: 0}
-    - _ShallowColor: {r: 0.16064437, g: 0.3584906, b: 0.3401167, a: 0}
+    - _DeepColor: {r: 0.22125304, g: 0.41509426, b: 0.41109225, a: 0.68235296}
+    - _ShallowColor: {r: 0.1606443, g: 0.35849053, b: 0.34011665, a: 0.69411767}
   m_BuildTextureStacks: []
 --- !u!114 &2621312124342624308
 MonoBehaviour:
