@@ -19,11 +19,11 @@ public class CameraMove : MonoBehaviour
     public float rotate_min = -180f;
     public float rotate_max = 180f;
 
-    public float zoomOutMin_x = 25f;
-    public float zoomOutMax_x = 100f;
+    public float zoomOutMin_x = 1f;
+    public float zoomOutMax_x = 4f;
 
-    public float zoomOutMin_y = 10f;
-    public float zoomOutMax_y = 40f;
+    public float zoomOutMin_y = 1f;
+    public float zoomOutMax_y = 4f;
 
 
     public GameObject statue;
@@ -71,20 +71,25 @@ public class CameraMove : MonoBehaviour
 
         if(Input.touchCount == 2)
         {
-            Touch touch0 = Input.GetTouch(0);
+            //Touch touch0 = Input.GetTouch(0);
 
-            touch0_prev = touch0.position - touch0.deltaPosition;
+            //touch0_prev = touch0.position - touch0.deltaPosition;
 
-            rot = Vector2.Angle(touch0.position, touch0_prev);
 
-            if (rot > 20)
-            {
-                Rotate();
-            }
-            else
-            {
-                Zoom();
-            }
+            //if (rot > 20)
+            //{
+            //    Rotate();
+            //}
+            //else
+            //{
+            //    Zoom();
+            //}
+
+
+            //Rotate();
+
+
+            Zoom();
 
         }
         else if(Input.touchCount == 3)
@@ -112,20 +117,32 @@ public class CameraMove : MonoBehaviour
 
         float x = -(dir.y) * tilt_rate;
 
-        Portrait.transform.eulerAngles += new Vector3(x, Portrait.transform.rotation.y, Portrait.transform.rotation.z);
+        cam.transform.eulerAngles += new Vector3(x, cam.transform.rotation.y, cam.transform.rotation.z);
+
+        cam.transform.eulerAngles = new Vector3(
+            Mathf.Clamp(cam.transform.rotation.x, rotate_min, rotate_max),
+            cam.transform.rotation.y,
+            cam.transform.rotation.z
+            );
 
         touchpoint = cam.ScreenToWorldPoint(Input.mousePosition);
     }
 
     void Rotate()
     {
-        
+        //Touch touch0 = Input.GetTouch(0);
+        //Touch touch1 = Input.GetTouch(1);
 
-        Vector3 rotate_portrait = new Vector3(Portrait.transform.rotation.x, Portrait.transform.rotation.y, rot);
+        //touch0_prev = touch0.position - touch0.deltaPosition;
+        //touch1_prev = touch1.position - touch1.deltaPosition;
 
-        Portrait.transform.eulerAngles += rotate_portrait;
+        //prev_magnitude = (touch0_prev - touch1_prev).magnitude;
+        //cur_magnitude = (touch0.position - touch1.position).magnitude;
 
-        Debug.Log("Rotate!");
+        //difference = cur_magnitude - prev_magnitude;
+        //Debug.Log(difference);
+
+
 
     }
 

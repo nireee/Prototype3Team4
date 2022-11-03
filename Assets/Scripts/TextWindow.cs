@@ -2,11 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class TextWindow : MonoBehaviour
 {
 
     public GameObject TextPanel;
+    public GameObject choice1;
+    public GameObject choice2;
+    public GameObject result;
+    public TextMeshProUGUI ResultPanel;
+    [TextArea] public string Result1;
+    [TextArea] public string Result2;
     //public Text content;
 
 
@@ -14,12 +21,13 @@ public class TextWindow : MonoBehaviour
     void Start()
     {
         TextPanel.SetActive(false);
+        result.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     //public void DisplayText(string s)
@@ -36,5 +44,31 @@ public class TextWindow : MonoBehaviour
     public void HideText()
     {
         TextPanel.SetActive(false);
+        //Reset Info card choices, might need
+        //choice1.SetActive(true);
+        //choice2.SetActive(true);
+        //result.SetActive(false);
+    }
+
+    public void Choice1()
+    {
+        choice1.SetActive(false);
+        choice2.SetActive(false);
+        result.SetActive(true);
+        DisplayAnswer(Result1);
+    }
+
+    public void Choice2()
+    {
+        choice1.SetActive(false);
+        choice2.SetActive(false);
+        result.SetActive(true);
+        DisplayAnswer(Result2);
+
+    }
+
+    public void DisplayAnswer(string ans)
+    {
+        ResultPanel.text = ans;
     }
 }
