@@ -516,7 +516,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &135937165
 PrefabInstance:
@@ -1046,7 +1046,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 498718015}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1097,10 +1097,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 498718015}
   m_LocalRotation: {x: -0.058931567, y: 0.098278545, z: 0.0058302153, w: 0.9933954}
-  m_LocalPosition: {x: 6.29, y: -3.02, z: 13.03}
+  m_LocalPosition: {x: 5.923, y: -2.535, z: 11.761}
   m_LocalScale: {x: 1.3977, y: 1.3977, z: 1.3977}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 679075096}
   m_Father: {fileID: 963194228}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: -6.79, y: 11.3, z: 0}
@@ -1201,7 +1202,7 @@ RectTransform:
   - {fileID: 1409650359}
   - {fileID: 73491841}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1381,6 +1382,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: dd7dd8ab6d206904db3b3ea5406743fa, type: 3}
   m_PrefabInstance: {fileID: 623143586}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &679075096 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 99b66ff5358a9f648a117cc6d1cae519, type: 3}
+  m_PrefabInstance: {fileID: 1682591760}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1474,7 +1480,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -4.839, y: -24.168, z: 2.265}
 --- !u!114 &705507996
 MonoBehaviour:
@@ -2373,7 +2379,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1f7aa4d40edff6e48b549003cad031e1, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1f7aa4d40edff6e48b549003cad031e1, type: 3}
       propertyPath: m_LocalScale.x
@@ -2604,7 +2610,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 653fc0f92a2fe3246a994d671cf3d756, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 653fc0f92a2fe3246a994d671cf3d756, type: 3}
       propertyPath: m_LocalScale.x
@@ -3068,63 +3074,63 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 2
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 498718019}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 99b66ff5358a9f648a117cc6d1cae519, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 99b66ff5358a9f648a117cc6d1cae519, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.012898596
+      value: 0.012289961
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 99b66ff5358a9f648a117cc6d1cae519, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.012898596
+      value: 0.012289959
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 99b66ff5358a9f648a117cc6d1cae519, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.012898596
+      value: 0.012289958
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 99b66ff5358a9f648a117cc6d1cae519, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.32
+      value: 0.0028015
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 99b66ff5358a9f648a117cc6d1cae519, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.48
+      value: 0.0076512
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 99b66ff5358a9f648a117cc6d1cae519, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 12.33
+      value: 0.036465
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 99b66ff5358a9f648a117cc6d1cae519, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.58211607
+      value: 0.33213627
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 99b66ff5358a9f648a117cc6d1cae519, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.43563014
+      value: -0.34983116
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 99b66ff5358a9f648a117cc6d1cae519, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.6677365
+      value: 0.80136013
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 99b66ff5358a9f648a117cc6d1cae519, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.15967254
+      value: -0.353731
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 99b66ff5358a9f648a117cc6d1cae519, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -17.094
+      value: 31.354
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 99b66ff5358a9f648a117cc6d1cae519, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 106.489
+      value: 128.374
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 99b66ff5358a9f648a117cc6d1cae519, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -53.432
+      value: -74.236
       objectReference: {fileID: 0}
     - target: {fileID: -7635826562936255635, guid: 99b66ff5358a9f648a117cc6d1cae519, type: 3}
       propertyPath: m_Materials.Array.data[0]
