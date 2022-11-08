@@ -16,14 +16,14 @@ public class CameraMove : MonoBehaviour
 
     public float rot;
     public float tilt_rate;
-    public float rotate_min = -180f;
-    public float rotate_max = 180f;
+    public float rotate_min = -60f;
+    public float rotate_max = -12.362f;
 
-    public float zoomOutMin_x = 1f;
-    public float zoomOutMax_x = 4f;
+    public float zoomOutMin_x = 0.06486062f;
+    public float zoomOutMax_x = 0.26f;
 
-    public float zoomOutMin_y = 1f;
-    public float zoomOutMax_y = 4f;
+    public float zoomOutMin_y = 0.06486062f;
+    public float zoomOutMax_y = 0.26f;
 
 
     public GameObject statue;
@@ -55,47 +55,31 @@ public class CameraMove : MonoBehaviour
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity))
             {
-                if (hit.transform.tag == "Statue")
+                if (hit.transform.gameObject.name == Camera.main.transform.GetChild(0).name)
                 {
                     //Rotate
+                    Debug.Log("AllowRotate");
                     AllowRotate = true;
                 }
-                else
-                {
-                    AllowRotate = false;
-                }
+            }
+            else
+            {
+                AllowRotate = false;
             }
         }
 
         if(Input.touchCount == 2)
         {
-            //Touch touch0 = Input.GetTouch(0);
-
-            //touch0_prev = touch0.position - touch0.deltaPosition;
-
-
-            //if (rot > 20)
-            //{
-            //    Rotate();
-            //}
-            //else
-            //{
-            //    Zoom();
-            //}
-
-
-            //Rotate();
-
 
             Zoom();
 
         }
-        else if(Input.touchCount == 3)
-        {
-            Tilt();
-        }
+        //else if(Input.touchCount == 3)
+        //{
+        //    Tilt();
+        //}
 
         else if (Input.GetMouseButton(0))
         {
@@ -113,37 +97,20 @@ public class CameraMove : MonoBehaviour
 
     void Tilt()
     {
-        Vector3 dir = touchpoint - cam.ScreenToWorldPoint(Input.mousePosition);
+        //Debug.Log("Tilt!");
+        //Vector3 dir = touchpoint - cam.ScreenToWorldPoint(Input.mousePosition);
 
-        float x = -(dir.y) * tilt_rate;
+        //float x = -(dir.y) * tilt_rate;
 
-        cam.transform.eulerAngles += new Vector3(x, cam.transform.rotation.y, cam.transform.rotation.z);
+        //cam.transform.eulerAngles += new Vector3(x, 0, 0);
 
-        cam.transform.eulerAngles = new Vector3(
-            Mathf.Clamp(cam.transform.rotation.x, rotate_min, rotate_max),
-            cam.transform.rotation.y,
-            cam.transform.rotation.z
-            );
+        //cam.transform.eulerAngles = new Vector3(
+        //    Mathf.Clamp(cam.transform.rotation.x, rotate_min, rotate_max),
+        //    cam.transform.rotation.y,
+        //    cam.transform.rotation.z
+        //    );
 
-        touchpoint = cam.ScreenToWorldPoint(Input.mousePosition);
-    }
-
-    void Rotate()
-    {
-        //Touch touch0 = Input.GetTouch(0);
-        //Touch touch1 = Input.GetTouch(1);
-
-        //touch0_prev = touch0.position - touch0.deltaPosition;
-        //touch1_prev = touch1.position - touch1.deltaPosition;
-
-        //prev_magnitude = (touch0_prev - touch1_prev).magnitude;
-        //cur_magnitude = (touch0.position - touch1.position).magnitude;
-
-        //difference = cur_magnitude - prev_magnitude;
-        //Debug.Log(difference);
-
-
-
+        //touchpoint = cam.ScreenToWorldPoint(Input.mousePosition);
     }
 
     void SetCamBoundary()
@@ -199,9 +166,10 @@ public class CameraMove : MonoBehaviour
     {
         Debug.Log("Rotate!");
         Vector3 dir = touchpoint - cam.ScreenToWorldPoint(Input.mousePosition);
-        Rotation.y = (dir.x) * rotate_speed;
+        Rotation.y = -(dir.x) * rotate_speed;
         Rotation.x = -(dir.y) * rotate_speed;
-        statue.transform.eulerAngles += Rotation;
+        //statue.transform.eulerAngles += Rotation;
+        statue.transform.Rotate(Rotation);
         touchpoint = cam.ScreenToWorldPoint(Input.mousePosition);
     }
 

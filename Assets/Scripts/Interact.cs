@@ -10,7 +10,6 @@ public class Interact : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Touched = false;
         TextPanel.SetActive(false);
     }
 
@@ -18,6 +17,19 @@ public class Interact : MonoBehaviour
     void Update()
     {
         CheckTouchTag();
+        if (Touched)
+        {
+            TextPanel.SetActive(true);
+        }
+        else
+        {
+            TextPanel.SetActive(false);
+        }
+        if (TextPanel.GetComponent<TextWindow>().HasExit == true)
+        {
+            TextPanel.GetComponent<TextWindow>().HasExit = false;
+            Touched = false;
+        }
         //Reposition();
     }
 
@@ -30,11 +42,9 @@ public class Interact : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, Mathf.Infinity))
             {
-                if (hit.transform.tag == "InteractObj")
+                if (hit.transform.gameObject == this.gameObject)
                 {
                     Touched = true;
-                    TextPanel.SetActive(Touched);
-                    Touched = false;
                 }
             }
 

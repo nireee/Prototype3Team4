@@ -11,7 +11,10 @@ public class Timelapse : MonoBehaviour
     public Button phase3;
     public Button phase4;
 
-    public SceneControl cur_scene;
+    private Camera cam;
+    public bool isRotate;
+    
+    private SceneControl cur_scene;
 
     public static Timelapse staticTimelapse;
     // Start is called before the first frame update
@@ -31,12 +34,15 @@ public class Timelapse : MonoBehaviour
         phase3.interactable = false;
         phase4.interactable = false;
 
+        cam = Camera.main;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(cur_scene.countdown == 0)
+        cur_scene = FindObjectOfType<SceneControl>();
+        if (cur_scene.countdown == 0)
         {
             Scene scene = SceneManager.GetActiveScene();
             int scene_index = scene.buildIndex + 1;
@@ -61,17 +67,23 @@ public class Timelapse : MonoBehaviour
     public void Phase1()
     {
         SceneManager.LoadScene(0);
+
     }
     public void Phase2()
     {
         SceneManager.LoadScene(1);
+
     }
     public void Phase3()
     {
         SceneManager.LoadScene(2);
+
     }
     public void Phase4()
     {
         SceneManager.LoadScene(3);
+
     }
+
+   
 }

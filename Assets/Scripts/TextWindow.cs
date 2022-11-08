@@ -14,7 +14,9 @@ public class TextWindow : MonoBehaviour
     public TextMeshProUGUI ResultPanel;
     [TextArea] public string Result1;
     [TextArea] public string Result2;
-    //public Text content;
+    public bool CorrectIsChoice1;
+    public bool HasExit;
+    public bool ChoiceMade;
 
 
     // Start is called before the first frame update
@@ -30,12 +32,6 @@ public class TextWindow : MonoBehaviour
 
     }
 
-    //public void DisplayText(string s)
-    //{
-    //    content.text = s;
-
-    //}
-
     public void ShowText()
     {
         TextPanel.SetActive(true);
@@ -44,6 +40,7 @@ public class TextWindow : MonoBehaviour
     public void HideText()
     {
         TextPanel.SetActive(false);
+        HasExit = true;
         //Reset Info card choices, might need
         //choice1.SetActive(true);
         //choice2.SetActive(true);
@@ -56,6 +53,8 @@ public class TextWindow : MonoBehaviour
         choice2.SetActive(false);
         result.SetActive(true);
         DisplayAnswer(Result1);
+        ChoiceMade = true;
+        SetCorrectResultColor();
     }
 
     public void Choice2()
@@ -64,11 +63,27 @@ public class TextWindow : MonoBehaviour
         choice2.SetActive(false);
         result.SetActive(true);
         DisplayAnswer(Result2);
+        ChoiceMade = true;
+        SetCorrectResultColor();
 
     }
 
     public void DisplayAnswer(string ans)
     {
         ResultPanel.text = ans;
+    }
+
+    //have to preset whether CorrectIsChoice1 is true or not
+    public void SetCorrectResultColor()
+    {
+        if (CorrectIsChoice1 == true)
+        {
+            ResultPanel.color = Color.green;
+        }
+        else if(CorrectIsChoice1 == false)
+        {
+            ResultPanel.color = Color.red;
+            
+        }
     }
 }
