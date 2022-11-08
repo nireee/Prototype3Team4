@@ -2829,6 +2829,39 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 25fa4d5c6b9b46f418c1285c109f874f, type: 3}
   m_PrefabInstance: {fileID: 1081448296}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1081448298 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 25fa4d5c6b9b46f418c1285c109f874f, type: 3}
+  m_PrefabInstance: {fileID: 1081448296}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1081448299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1081448298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c6cf42ca67284f79945ad2f5c9c06a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 963194227}
+  Touched: 0
+  TextPanel: {fileID: 1938004887}
+--- !u!65 &1081448300
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1081448298}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 21.1, y: 19.6, z: 29.6}
+  m_Center: {x: 9.64, y: 9.06, z: 0.8}
 --- !u!1001 &1082796361
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5010,6 +5043,16 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1953825732}
     m_Modifications:
+    - target: {fileID: 4086339691606855841, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
+      propertyPath: Result1
+      value: "It doesn\u2019t do much, but at least you\u2019ve got a nice porch.
+        Still, that cough is getting ominous."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086339691606855841, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
+      propertyPath: Result2
+      value: "The dust is a growing problem in the community, and you aren\u2019t
+        the only one noticing. Your legislator creates action on a larger scale."
+      objectReference: {fileID: 0}
     - target: {fileID: 4086339691606855868, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5097,6 +5140,20 @@ PrefabInstance:
     - target: {fileID: 4086339691606855869, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
       propertyPath: m_Name
       value: TextWindow
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086339692847018012, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
+      propertyPath: m_text
+      value: The first waves of dust are bombarding Salt Lake Valley. From Provo
+        to Ogden, people are seeing dust on their porches and everywhere else. What
+        would you do?
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086339692897577867, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
+      propertyPath: m_text
+      value: Contact Your Legislator
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086339693178347958, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
+      propertyPath: m_text
+      value: Clean up Porch
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -5327,6 +5384,16 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1953825732}
     m_Modifications:
+    - target: {fileID: 4086339691606855841, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
+      propertyPath: Result1
+      value: "The salinity decreases, and the brine creatures return. Though returning
+        water to the lake is easier said than done\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086339691606855841, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
+      propertyPath: Result2
+      value: "It\u2019s not just bugs. They are a critical food source. As they disappear,
+        so too do the seagulls. Utah\u2019s state bird vanishes along with the lake."
+      objectReference: {fileID: 0}
     - target: {fileID: 4086339691606855868, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5414,6 +5481,20 @@ PrefabInstance:
     - target: {fileID: 4086339691606855869, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
       propertyPath: m_Name
       value: TextWindow (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086339692847018012, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
+      propertyPath: m_text
+      value: Brine flies and brine shrimp, critical food sources for the seagulls,
+        are disappearing as the lake becomes too saline even for them. What would
+        you do?
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086339692897577867, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
+      propertyPath: m_text
+      value: It's Just Bugs
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086339693178347958, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
+      propertyPath: m_text
+      value: Return Water to Lake
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

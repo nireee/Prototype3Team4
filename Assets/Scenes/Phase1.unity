@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.07471882, g: 0.06682501, b: 0.04415846, a: 1}
+  m_IndirectSpecularColor: {r: 0.07471899, g: 0.06682509, b: 0.04415848, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &13844810 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: fe48a0696555d1447bf0394e98cb942c, type: 3}
+  m_PrefabInstance: {fileID: 428566143}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &41698308
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1236,6 +1241,14 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 2043598131}
     m_Modifications:
+    - target: {fileID: 4086339691606855841, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
+      propertyPath: Result1
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086339691606855841, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
+      propertyPath: Result2
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4086339691606855868, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1339,6 +1352,18 @@ PrefabInstance:
     - target: {fileID: 4086339691606855869, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086339692847018012, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086339692897577867, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086339693178347958, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
+      propertyPath: m_text
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -1543,6 +1568,34 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: fe48a0696555d1447bf0394e98cb942c, type: 3}
   m_PrefabInstance: {fileID: 428566143}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &428566145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13844810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c6cf42ca67284f79945ad2f5c9c06a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 963194227}
+  Touched: 0
+  TextPanel: {fileID: 1540794161}
+--- !u!65 &428566146
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13844810}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &476037781
 GameObject:
   m_ObjectHideFlags: 0
@@ -2358,6 +2411,18 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 2043598131}
     m_Modifications:
+    - target: {fileID: 4086339691606855841, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
+      propertyPath: Result1
+      value: "It worked for the Dead Sea, but it didn\u2019t work for you. The toxic,
+        dusty air makes everyone who visits cough up a storm. It quickly gains a
+        reputation for being a terrible place to visit. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086339691606855841, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
+      propertyPath: Result2
+      value: "It turns out that Utah agriculture is using up 80% of the state\u2019s
+        water for alfalfa plants and hay. You and others advocate for more water-saving
+        practices like irrigation. "
+      objectReference: {fileID: 0}
     - target: {fileID: 4086339691606855868, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2461,6 +2526,21 @@ PrefabInstance:
     - target: {fileID: 4086339691606855869, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086339692847018012, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
+      propertyPath: m_text
+      value: 'The Great Salt Lake has reached maximum salinity. It is now the saltiest
+        place on earth, and nothing can live in its tiny remains. What do you do?
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086339692897577867, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
+      propertyPath: m_text
+      value: Find Where Water Diversion Is
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086339693178347958, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
+      propertyPath: m_text
+      value: Turn into a Tourist Attraction
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -4620,6 +4700,18 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 2043598131}
     m_Modifications:
+    - target: {fileID: 4086339691606855841, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
+      propertyPath: Result1
+      value: "You aren\u2019t the only one. The amount of dust results in a ghost
+        town as the once bustling city fades as people move to greener pastures.
+        Lawmakers start taking notice of the dwindling population."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086339691606855841, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
+      propertyPath: Result2
+      value: "Salt Lake City is your home regardless of the dust. However, you realize
+        that it\u2019s getting harder to breathe. Finding out there\u2019s arsenic
+        in the looming dust makes you worry of cancer."
+      objectReference: {fileID: 0}
     - target: {fileID: 4086339691606855868, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4723,6 +4815,19 @@ PrefabInstance:
     - target: {fileID: 4086339691606855869, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086339692847018012, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
+      propertyPath: m_text
+      value: "These days, it feels like there\u2019s more dust than air. You\u2019re
+        inhaling so much dust that you have asthma. What would you do?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086339692897577867, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
+      propertyPath: m_text
+      value: Stay in Salt Lake City
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086339693178347958, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
+      propertyPath: m_text
+      value: Leave Salt Lake City
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
