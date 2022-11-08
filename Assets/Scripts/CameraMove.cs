@@ -19,12 +19,8 @@ public class CameraMove : MonoBehaviour
     public float rotate_min = -60f;
     public float rotate_max = -12.362f;
 
-    public float zoomOutMin_x = 0.06486062f;
-    public float zoomOutMax_x = 0.26f;
-
-    public float zoomOutMin_y = 0.06486062f;
-    public float zoomOutMax_y = 0.26f;
-
+    public float zoomOutMin = 0.06486062f;
+    public float zoomOutMax = 0.26f;
 
     public GameObject statue;
 
@@ -138,15 +134,16 @@ public class CameraMove : MonoBehaviour
         
 
         cur_scale = Portrait.transform.localScale;
-        cur_scale.x = Mathf.Clamp(Portrait.transform.localScale.x + (2.5f*difference*zoom_rate), zoomOutMin_x, zoomOutMax_x);
-        cur_scale.y = Mathf.Clamp(Portrait.transform.localScale.y + (difference*zoom_rate), zoomOutMin_y, zoomOutMax_y);
+        cur_scale.x = Mathf.Clamp(Portrait.transform.localScale.x + (difference* zoom_rate), zoomOutMin, zoomOutMax);
+        cur_scale.y = Mathf.Clamp(Portrait.transform.localScale.y + (difference* zoom_rate), zoomOutMin, zoomOutMax);
+        cur_scale.z = Mathf.Clamp(Portrait.transform.localScale.z + (difference * zoom_rate), zoomOutMin, zoomOutMax);
 
-        float factor = cur_scale.x / Portrait.transform.localScale.x;
+        //float factor = cur_scale.x / Portrait.transform.localScale.x;
 
-        LeftLimit *= factor;
-        RightLimit *= factor;
-        TopLimit *= factor;
-        BottomLimit *= factor;
+        //LeftLimit *= factor;
+        //RightLimit *= factor;
+        //TopLimit *= factor;
+        //BottomLimit *= factor;
 
         Portrait.transform.localScale = cur_scale;
 

@@ -1,57 +1,66 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using UnityEngine.SceneManagement;
 
 public class Rotate : MonoBehaviour
 {
-    public bool isRotate;
+    public bool isRotate_left;
+    public bool isRotate_right;
     public float rotate_rate;
-    private Camera cam;
-    //private GameObject portrait;
+
+    private GameObject portrait;
     // Start is called before the first frame update
     void Start()
     {
-        cam = Camera.main;
-        
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
 
-        //Scene scene = SceneManager.GetActiveScene();
+        portrait = GameObject.Find("Landscape");
 
-        //foreach(GameObject obj in scene.GetRootGameObjects())
-        //{
-        //    if(obj.name == "Landscape")
-        //    {
-        //        portrait = obj;
-        //    }
-        //}
-
-        if (isRotate)
+        if (isRotate_left)
         {
             RotateLeft();
         }
+        if (isRotate_right)
+        {
+            RotateRight();
+        }
     }
 
-    public void PointerDown()
+    public void PointerDown_left()
     {
-        isRotate = true;
+        isRotate_left = true;
     }
 
-    public void PointerUp()
+    public void PointerUp_left()
     {
-        isRotate = false;
+        isRotate_left = false;
+    }
+
+    public void PointerDown_right()
+    {
+        isRotate_right = true;
+    }
+
+    public void PointerUp_right()
+    {
+        isRotate_right = false;
     }
 
     public void RotateLeft()
     {
 
-        cam.transform.eulerAngles += new Vector3(0, 0, rotate_rate);
+        portrait.transform.Rotate(0, rotate_rate, 0, Space.Self);
+
+    }
+    public void RotateRight()
+    {
+
+        portrait.transform.Rotate(0, -rotate_rate, 0, Space.Self);
 
     }
 }
