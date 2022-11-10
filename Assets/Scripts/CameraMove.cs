@@ -159,7 +159,7 @@ public class CameraMove : MonoBehaviour
         difference = cur_magnitude - prev_magnitude;
 
 
-        cam.orthographicSize += difference * zoom_rate;
+        cam.orthographicSize -= difference * zoom_rate;
 
         cam.orthographicSize = Mathf.Clamp(cam.orthographicSize, zoomOutMin, zoomOutMax);
 
