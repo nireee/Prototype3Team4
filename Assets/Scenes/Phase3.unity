@@ -1381,7 +1381,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 963194227}
   Touched: 0
-  TextPanel: {fileID: 813697821}
+  TextPanel: {fileID: 584549118}
 --- !u!65 &428566147
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2082,7 +2082,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 963194227}
   Touched: 0
-  TextPanel: {fileID: 813697821}
+  TextPanel: {fileID: 584549118}
 --- !u!65 &561294469
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2106,13 +2106,13 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4086339691606855841, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
       propertyPath: Result1
-      value: Good investment. Your plan pays off in the face of the coming megadrought.
-      objectReference: {fileID: 0}
-    - target: {fileID: 4086339691606855841, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
-      propertyPath: Result2
       value: "The survey finds a lot of concerning things about the future of nearby
         lakes. It\u2019s early, but the information gained helps to improve things
         before they get too bad."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086339691606855841, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
+      propertyPath: Result2
+      value: Your plan keeps you cool but not for long as the megadrought arrives.
       objectReference: {fileID: 0}
     - target: {fileID: 4086339691606855868, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
       propertyPath: m_Pivot.x
@@ -2204,16 +2204,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4086339692847018012, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
       propertyPath: m_text
-      value: The weather is getting warmer. It might be global warming with Salt
-        Lake City heating up more. What would you do?
+      value: The weather is getting warmer. It might be global warming that's making
+        Salt Lake City heat up. What would you do?
       objectReference: {fileID: 0}
     - target: {fileID: 4086339692897577867, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
       propertyPath: m_text
-      value: Donate to a Scientific Study
+      value: Insulate Your House
       objectReference: {fileID: 0}
     - target: {fileID: 4086339693178347958, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
       propertyPath: m_text
-      value: Insulate Your House
+      value: Donate to a Scientific Study
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -2476,7 +2476,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 963194227}
   Touched: 0
-  TextPanel: {fileID: 813697821}
+  TextPanel: {fileID: 584549118}
 --- !u!65 &623143590
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2812,12 +2812,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4086339691606855841, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
       propertyPath: Result1
-      value: Nothing done, and nothing changes. Lake levels continue to slip.
+      value: For a while, the commission seems useless. But a few years later, they
+        identify a huge risk and are able to propose a useful fix.
       objectReference: {fileID: 0}
     - target: {fileID: 4086339691606855841, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
       propertyPath: Result2
-      value: For a while, the commission seems useless. But a few years later, they
-        identify a huge risk and are able to propose a useful fix.
+      value: Nothing done, and nothing changes. Lake levels continue to slip.
       objectReference: {fileID: 0}
     - target: {fileID: 4086339691606855868, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
       propertyPath: m_Pivot.x
@@ -2914,11 +2914,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4086339692897577867, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
       propertyPath: m_text
-      value: Organize A Commision
+      value: Do Nothing
       objectReference: {fileID: 0}
     - target: {fileID: 4086339693178347958, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
       propertyPath: m_text
-      value: Do Nothing
+      value: Organize A Commision
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -4650,7 +4650,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1391743903}
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: 26.908115, y: 5.3987164, z: -38.445927}
+  m_LocalPosition: {x: 7.8, y: 5.3987164, z: -38.445927}
   m_LocalScale: {x: 22.13253, y: 1.9865493, z: 22.132524}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4671,7 +4671,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 963194227}
   Touched: 0
-  TextPanel: {fileID: 584549118}
+  TextPanel: {fileID: 813697821}
 --- !u!65 &1391743906
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6971,7 +6971,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 963194227}
   Touched: 0
-  TextPanel: {fileID: 813697821}
+  TextPanel: {fileID: 584549118}
 --- !u!65 &2049547176
 BoxCollider:
   m_ObjectHideFlags: 0
