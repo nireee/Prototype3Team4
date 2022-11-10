@@ -8,8 +8,6 @@ public class Tilt : MonoBehaviour
     public bool tilt_down;
     public float tilt_rate;
     private Camera cam;
-    public float rotate_min = -60f;
-    public float rotate_max = -12.362f;
     // Start is called before the first frame update
     void Start()
     {

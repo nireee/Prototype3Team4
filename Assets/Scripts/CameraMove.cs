@@ -16,15 +16,13 @@ public class CameraMove : MonoBehaviour
 
     public float rot;
     public float tilt_rate;
-    public float rotate_min = -60f;
-    public float rotate_max = -12.362f;
+    public float rotate_min;
+    public float rotate_max;
 
-    public float zoomOutMin_x = 0.06486062f;
-    public float zoomOutMax_x = 0.26f;
+    public float zoomOutMin;
+    public float zoomOutMax;
 
-    public float zoomOutMin_y = 0.06486062f;
-    public float zoomOutMax_y = 0.26f;
-
+    [SerializeField]private Vector3 minValue, maxValue;
 
     public GameObject statue;
 
@@ -32,13 +30,12 @@ public class CameraMove : MonoBehaviour
     private Vector3 Rotation;
     public float rotate_speed = 10f;
 
-    public GameObject Portrait;
-    public Vector3 cur_scale;
+    public float cur_camSize;
 
-    public float LeftLimit;
-    public float RightLimit;
-    public float TopLimit;
-    public float BottomLimit;
+    public GameObject Portrait;
+
+    public float euler_x;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +45,23 @@ public class CameraMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        cur_camSize = cam.orthographicSize;
+        if(cam.transform.eulerAngles.x < 329.9 && cam.transform.eulerAngles.x > 1)
+        {
+            euler_x = 330;
+        }
+        else if(cam.transform.eulerAngles.x > 0 && cam.transform.eulerAngles.x < 1)
+        {
+            euler_x = 360;
+        }
+        else
+        {
+            euler_x = cam.transform.eulerAngles.x;
+        }
+     
+        Debug.Log(cam.transform.eulerAngles);
+        cam.transform.rotation = Quaternion.Euler(euler_x, cam.transform.eulerAngles.y, cam.transform.eulerAngles.z);
+
         if (Input.GetMouseButtonDown(0))
         {
             touchpoint = cam.ScreenToWorldPoint(Input.mousePosition);
@@ -57,7 +71,7 @@ public class CameraMove : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, Mathf.Infinity))
             {
-                if (hit.transform.gameObject.name == Camera.main.transform.GetChild(0).name)
+                if (hit.transform.tag == "Statue")
                 {
                     //Rotate
                     Debug.Log("AllowRotate");
@@ -95,32 +109,40 @@ public class CameraMove : MonoBehaviour
         }
     }
 
-    void Tilt()
-    {
-        //Debug.Log("Tilt!");
-        //Vector3 dir = touchpoint - cam.ScreenToWorldPoint(Input.mousePosition);
+    //void Tilt()
+    //{
+    //    //Debug.Log("Tilt!");
+    //    //Vector3 dir = touchpoint - cam.ScreenToWorldPoint(Input.mousePosition);
 
-        //float x = -(dir.y) * tilt_rate;
+    //    //float x = -(dir.y) * tilt_rate;
 
-        //cam.transform.eulerAngles += new Vector3(x, 0, 0);
+    //    //cam.transform.eulerAngles += new Vector3(x, 0, 0);
 
-        //cam.transform.eulerAngles = new Vector3(
-        //    Mathf.Clamp(cam.transform.rotation.x, rotate_min, rotate_max),
-        //    cam.transform.rotation.y,
-        //    cam.transform.rotation.z
-        //    );
+    //    //cam.transform.eulerAngles = new Vector3(
+    //    //    Mathf.Clamp(cam.transform.rotation.x, rotate_min, rotate_max),
+    //    //    cam.transform.rotation.y,
+    //    //    cam.transform.rotation.z
+    //    //    );
 
-        //touchpoint = cam.ScreenToWorldPoint(Input.mousePosition);
-    }
+    //    //touchpoint = cam.ScreenToWorldPoint(Input.mousePosition);
+    //}
 
     void SetCamBoundary()
     {
+        float minx = minValue.x * (cur_camSize / 4);
+        float miny = minValue.y * (cur_camSize / 4);
+        float minz = minValue.z * (cur_camSize / 4);
+        float maxx = maxValue.x * (cur_camSize / 4);
+        float maxy = maxValue.y * (cur_camSize / 4);
+        float maxz = maxValue.z * (cur_camSize / 4);
+
         cam.transform.position = new Vector3
         (
-            Mathf.Clamp(transform.position.x, LeftLimit, RightLimit),
-            Mathf.Clamp(transform.position.y, BottomLimit, TopLimit),
-            cam.transform.position.z
+            Mathf.Clamp(cam.transform.position.x, minx, maxx),
+            Mathf.Clamp(cam.transform.position.y, miny, maxy),
+            Mathf.Clamp(cam.transform.position.z, minz, maxz)
         );
+        
     }
 
     void Zoom()
@@ -135,20 +157,11 @@ public class CameraMove : MonoBehaviour
         cur_magnitude = (touch0.position - touch1.position).magnitude;
 
         difference = cur_magnitude - prev_magnitude;
-        
 
-        cur_scale = Portrait.transform.localScale;
-        cur_scale.x = Mathf.Clamp(Portrait.transform.localScale.x + (2.5f*difference*zoom_rate), zoomOutMin_x, zoomOutMax_x);
-        cur_scale.y = Mathf.Clamp(Portrait.transform.localScale.y + (difference*zoom_rate), zoomOutMin_y, zoomOutMax_y);
 
-        float factor = cur_scale.x / Portrait.transform.localScale.x;
+        cam.orthographicSize += difference * zoom_rate;
 
-        LeftLimit *= factor;
-        RightLimit *= factor;
-        TopLimit *= factor;
-        BottomLimit *= factor;
-
-        Portrait.transform.localScale = cur_scale;
+        cam.orthographicSize = Mathf.Clamp(cam.orthographicSize, zoomOutMin, zoomOutMax);
 
         Debug.Log("Zoom!");
 
@@ -159,14 +172,14 @@ public class CameraMove : MonoBehaviour
         Vector3 dir = touchpoint - cam.ScreenToWorldPoint(Input.mousePosition);
         dir.z = 0;
         cam.transform.position += dir;
-        //SetCamBoundary();
+        SetCamBoundary();
     }
 
     void RotateStatue()
     {
         Debug.Log("Rotate!");
         Vector3 dir = touchpoint - cam.ScreenToWorldPoint(Input.mousePosition);
-        Rotation.y = -(dir.x) * rotate_speed;
+        Rotation.y = (dir.x) * rotate_speed;
         Rotation.x = -(dir.y) * rotate_speed;
         //statue.transform.eulerAngles += Rotation;
         statue.transform.Rotate(Rotation);

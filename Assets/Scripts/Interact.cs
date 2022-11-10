@@ -19,16 +19,15 @@ public class Interact : MonoBehaviour
         CheckTouchTag();
         if (Touched)
         {
+            Debug.Log("Instantiate!");
             TextPanel.SetActive(true);
         }
-        else
+        if (TextPanel.GetComponent<TextWindow>().HasExit == true && Touched == true)
         {
-            TextPanel.SetActive(false);
-        }
-        if (TextPanel.GetComponent<TextWindow>().HasExit == true)
-        {
+            Debug.Log("quit!");
             TextPanel.GetComponent<TextWindow>().HasExit = false;
             Touched = false;
+            TextPanel.SetActive(false);
         }
         //Reposition();
     }
