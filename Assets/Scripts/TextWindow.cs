@@ -41,10 +41,6 @@ public class TextWindow : MonoBehaviour
     {
         TextPanel.SetActive(false);
         HasExit = true;
-        //Reset Info card choices, might need
-        //choice1.SetActive(true);
-        //choice2.SetActive(true);
-        //result.SetActive(false);
     }
 
     public void Choice1()

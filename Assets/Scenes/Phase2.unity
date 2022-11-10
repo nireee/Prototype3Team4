@@ -2038,7 +2038,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 751504544}
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: -20}
+  m_LocalPosition: {x: 0, y: 0, z: -17}
   m_LocalScale: {x: 0.2165878, y: 0.8663512, z: 0.8663512}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2047,7 +2047,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 367, y: -85}
+  m_AnchoredPosition: {x: 362.10004, y: -72}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &751504546
@@ -2282,12 +2282,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4086339691606855841, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
       propertyPath: Result1
-      value: The lake inches ever closer to the worst case scenario.
+      value: "It\u2019s a long uphill fight. But it slowly begins to stem the tide
+        and the lake begins to reverse direction."
       objectReference: {fileID: 0}
     - target: {fileID: 4086339691606855841, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
       propertyPath: Result2
-      value: "It\u2019s a long uphill fight. But it slowly begins to stem the tide
-        and the lake begins to reverse direction."
+      value: The lake inches ever closer to the worst case scenario.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086339691606855841, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
+      propertyPath: CorrectIsChoice1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4086339691606855868, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
       propertyPath: m_Pivot.x
@@ -2384,11 +2388,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4086339692897577867, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
       propertyPath: m_text
-      value: Ask Your Legislator To Lessen Water Diversions
+      value: Keep Diverting Water
       objectReference: {fileID: 0}
     - target: {fileID: 4086339693178347958, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
       propertyPath: m_text
-      value: Keep Diverting Water
+      value: Ask Your Legislator
       objectReference: {fileID: 0}
     - target: {fileID: 4086339693367566235, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2504,6 +2508,10 @@ PrefabInstance:
       propertyPath: Result2
       value: As the megadrought gets worse, you begin to run out of drinking water.
         Not exactly a good thing.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086339691606855841, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
+      propertyPath: CorrectIsChoice1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4086339691606855868, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
       propertyPath: m_Pivot.x
@@ -3002,7 +3010,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 966885963}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 13}
+  m_LocalPosition: {x: 0, y: 0, z: 18}
   m_LocalScale: {x: 0.2165878, y: 0.8663512, z: 0.8663512}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3011,7 +3019,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 367, y: 64}
+  m_AnchoredPosition: {x: 362.1, y: 88}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &966885965
@@ -3213,15 +3221,17 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4086339691606855841, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
       propertyPath: Result1
+      value: This manages to prevent the dust plumes, and the dust subsides over
+        time. Future air quality is saved from the toxic fumes.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086339691606855841, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
+      propertyPath: Result2
       value: Things are getting worse. Best get out of here while you still can.
         Uprooting is hard, but you live well enough elsewhere.
       objectReference: {fileID: 0}
     - target: {fileID: 4086339691606855841, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
-      propertyPath: Result2
-      value: 'This manages to prevent the dust plumes, and the dust subsides over
-        time. Future air quality is saved from the toxic fumes.
-
-'
+      propertyPath: CorrectIsChoice1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4086339691606855868, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
       propertyPath: m_Pivot.x
@@ -3318,11 +3328,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4086339692897577867, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
       propertyPath: m_text
-      value: Try To Fill The Lake & Cover Up The Dust Hotspots
+      value: Leave Salt Lake City
       objectReference: {fileID: 0}
     - target: {fileID: 4086339693178347958, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
       propertyPath: m_text
-      value: Leave Salt Lake
+      value: Try to Fill Lake
       objectReference: {fileID: 0}
     - target: {fileID: 4086339693367566235, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -6312,13 +6322,17 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4086339691606855841, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
       propertyPath: Result1
-      value: "It doesn\u2019t do much, but at least you\u2019ve got a nice porch.
-        Still, that cough is getting ominous."
+      value: "The dust is a growing problem in the community, and you aren\u2019t
+        the only one noticing. Your legislator creates action on a larger scale."
       objectReference: {fileID: 0}
     - target: {fileID: 4086339691606855841, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
       propertyPath: Result2
-      value: "The dust is a growing problem in the community, and you aren\u2019t
-        the only one noticing. Your legislator creates action on a larger scale."
+      value: "t doesn\u2019t do much, but at least you\u2019ve got a nice porch.
+        Still, that cough is getting ominous."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086339691606855841, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
+      propertyPath: CorrectIsChoice1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4086339691606855868, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
       propertyPath: m_Pivot.x
@@ -6416,11 +6430,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4086339692897577867, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
       propertyPath: m_text
-      value: Contact Your Legislator
+      value: Clean Up Porch
       objectReference: {fileID: 0}
     - target: {fileID: 4086339693178347958, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
       propertyPath: m_text
-      value: Clean up Porch
+      value: Contact Your Legislator
       objectReference: {fileID: 0}
     - target: {fileID: 4086339693367566235, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -6687,13 +6701,17 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4086339691606855841, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
       propertyPath: Result1
-      value: "The salinity decreases, and the brine creatures return. Though returning
-        water to the lake is easier said than done\u2026"
+      value: "The salinity decreases, and the brine creatures return. Returning water
+        to the lake is easier said than done\u2026"
       objectReference: {fileID: 0}
     - target: {fileID: 4086339691606855841, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
       propertyPath: Result2
       value: "It\u2019s not just bugs. They are a critical food source. As they disappear,
         so too do the seagulls. Utah\u2019s state bird vanishes along with the lake."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086339691606855841, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
+      propertyPath: CorrectIsChoice1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4086339691606855868, guid: 327cb906ffecb4323910128b65eaa7e7, type: 3}
       propertyPath: m_Pivot.x

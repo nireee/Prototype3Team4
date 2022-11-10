@@ -7,6 +7,7 @@ public class Interact : MonoBehaviour
     public Camera cam;
     public bool Touched;
     public GameObject TextPanel;
+    public bool Exist;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +17,7 @@ public class Interact : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        CheckIfInfoExist();
         CheckTouchTag();
         if (Touched)
         {
@@ -24,17 +26,17 @@ public class Interact : MonoBehaviour
         }
         if (TextPanel.GetComponent<TextWindow>().HasExit == true && Touched == true)
         {
+            
             Debug.Log("quit!");
             TextPanel.GetComponent<TextWindow>().HasExit = false;
             Touched = false;
             TextPanel.SetActive(false);
         }
-        //Reposition();
     }
 
     void CheckTouchTag()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !Exist)
         {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -47,6 +49,18 @@ public class Interact : MonoBehaviour
                 }
             }
 
+        }
+    }
+
+    public void CheckIfInfoExist()
+    {
+        if (GameObject.FindWithTag("TextWindow"))
+        {
+            Exist = true;
+        }
+        else
+        {
+            Exist = false;
         }
     }
 
